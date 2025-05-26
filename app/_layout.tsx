@@ -7,9 +7,11 @@ import { trpc, queryClient, trpcClient } from '@/lib/trpc';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { View, StyleSheet, Animated } from 'react-native';
 import { BlurView } from 'expo-blur';
-import Colors from '@/constants/colors';
+import Colors from '@/constants/colors'
+import { useFrameworkReady } from '@/hooks/useFrameworkReady';
 
 export default function RootLayout() {
+  useFrameworkReady();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuAnimation = new Animated.Value(0);
 
